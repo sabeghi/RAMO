@@ -13,12 +13,12 @@ namespace RAMO.UI.Pages
             _logger = logger;
         }
 
-        public JsonResult OnGetNames()
+        public IActionResult OnGetNames()
         {
             return new JsonResult("ok");
         }
 
-        public JsonResult OnPostGetTime(string name) {
+        public JsonResult OnPostGetTime([FromBody] string name) {
 
             return new JsonResult(name + " " + DateTime.Now.Date);
         }

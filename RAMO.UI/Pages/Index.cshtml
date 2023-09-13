@@ -5,7 +5,7 @@
 }
 
 <div class="text-center">
-    <img src="~/images/Dashboard.png" alt="Dashboard" style="max-width:100%;"/>
+    <img src="~/images/Dashboard.png" alt="Dashboard" style="max-width:100%;" />
     <button type="button" class="btn btn-info" onclick="myclick()">click me!</button>
     <button type="button" class="btn btn-info" onclick="myclickPost()">click post!</button>
 </div>
@@ -14,12 +14,13 @@
         function myclick() {
             $.ajax({
                 type: "GET",
+                url: "/Index?handler=Names",
                 contentType: "application/json; charset=utf-8",
-                url: "index?index=GetNames",
                 dataType: "json",
-                //beforeSend:function(xhr){
-                //    xhr.setRequestHeader("XSRF-TOKEN"), $('input:hidden[name="__RequestVerificationToken"]').val();
-                //},
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN",
+                        $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
                 success: function (data) {
                     toastr.success(data, "ok")
                 },
@@ -33,11 +34,12 @@
             $.ajax({
                 type: "POST",
                 contentType: "application/json; charset=utf-8",
-                url: "index?index=GetTime",
+                url: "/Index?handler=GetTime",
                 dataType: "json",
-                //beforeSend: function (xhr) {
-                //    xhr.setRequestHeader("XSRF-TOKEN"), $('input:hidden[name="__RequestVerificationToken"]').val();
-                //},
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN",
+                        $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
                 data: { "name": "mostafa" },
                 success: function (data) {
                     toastr.success(data, "ok")
