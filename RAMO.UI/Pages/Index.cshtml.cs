@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace RAMO.UI.Pages
@@ -12,9 +13,14 @@ namespace RAMO.UI.Pages
             _logger = logger;
         }
 
-        public static string OnGet()
+        public JsonResult OnGetNames()
         {
-            return "<div>salam</div>";
+            return new JsonResult("ok");
+        }
+
+        public JsonResult OnPostGetTime(string name) {
+
+            return new JsonResult(name + " " + DateTime.Now.Date);
         }
     }
 }

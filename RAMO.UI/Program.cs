@@ -2,10 +2,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddAntiforgery(option=> {
-    option.HeaderName = "XSRF-TOKEN";
-    option.SuppressXFrameOptionsHeader = false;
-});
+//builder.Services.AddAntiforgery(option=> {
+//    option.HeaderName = "XSRF-TOKEN";
+//    option.SuppressXFrameOptionsHeader = false;
+//});
 
 var app = builder.Build();
 
