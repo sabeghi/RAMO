@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RAMO.UI</title>
+    <meta name="theme-name" content="mono" />
+    <link href="plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="plugins/simplebar/simplebar.css" rel="stylesheet" />
+    <link href="plugins/nprogress/nprogress.css" rel="stylesheet" />
+    <link href="plugins/toaster/toastr.min.css" rel="stylesheet" />
+    <link id="main-css-href" rel="stylesheet" href="css/style.css" />
+    <script src="plugins/nprogress/nprogress.js"></script>
+    <link href="favicon.ico" rel="shortcut icon" />
+</head>
+
+<body class="navbar-fixed sidebar-fixed" id="body">
+    @Html.AntiForgeryToken()
+    <script>
+        NProgress.configure({ showSpinner: false });
+        NProgress.start();
+    </script>
+
+
+    <div id="toaster"></div>
+    <div class="wrapper">
+        <aside class="left-sidebar sidebar-dark" id="left-sidebar">
+            <div id="sidebar" class="sidebar sidebar-with-footer">
+                <!-- Aplication Brand -->
+                <div class="app-brand">
+                    <a href="/index.html">
+                        <img src="images/logo.png" alt="Mono">
+                        <span class="brand-name">اتوماسیون رامو</span>
+                    </a>
+                </div>
+                <!-- begin sidebar scrollbar -->
+                <div class="sidebar-left" data-simplebar style="height: 100%;">
+                    <!-- sidebar menu -->
+                    <ul class="nav sidebar-inner" id="sidebar-menu">
+                        <li>
+                            <a class="sidenav-item-link" href="calendar.html">
+                                <i class="mdi mdi-calendar-check"></i>
+                                <span class="nav-text">Calendar</span>
+                            </a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#email"
+                               aria-expanded="false" aria-controls="email">
+                                <i class="mdi mdi-email"></i>
+                                <span class="nav-text">email</span> <b class="caret"></b>
+                            </a>
+                            <div class="sub-menu">
+                                <ul class="collapse" id="email" data-parent="#sidebar-menu">
+                                    <li><a class="sidenav-item-link" href="email-inbox.html"><span class="nav-text">Email Inbox</span></a></li>
+                                    <li><a class="sidenav-item-link" href="email-inbox.html"><span class="nav-text">Email Inbox</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <div class="page-wrapper">
+            <header class="main-header" id="header">
+                <nav class="navbar navbar-expand-lg navbar-light" id="navbar">                    
+                    <button id="sidebar-toggler" class="sidebar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                    </button>
+                    <span class="page-title">@DateTime.Now.Date</span>
+                    <div class="navbar-right ">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown user-menu">
+                                <button class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                    <img src="images/user/user-xs-01.jpg" class="user-image rounded-circle" alt="User Image" />
+                                    <span class="d-none d-lg-inline-block">John Doe</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <a class="dropdown-link-item" href="user-profile.html">
+                                            <i class="mdi mdi-account-outline"></i>
+                                            <span class="nav-text">My Profile</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-link-item" href="email-inbox.html">
+                                            <i class="mdi mdi-email-outline"></i>
+                                            <span class="nav-text">Message</span>
+                                            <span class="badge badge-pill badge-primary">24</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-link-item" href="user-activities.html">
+                                            <i class="mdi mdi-diamond-stone"></i>
+                                            <span class="nav-text">Activitise</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-link-item" href="user-account-settings.html">
+                                            <i class="mdi mdi-settings"></i>
+                                            <span class="nav-text">Account Setting</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="dropdown-footer">
+                                        <a class="dropdown-link-item" href="sign-in.html"> <i class="mdi mdi-logout"></i> Log Out </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>                    
+                </nav>
+
+
+            </header>
+            <div class="content-wrapper">
+                <div class="content">
+                    @RenderBody()
+                </div>
+            </div>
+            <footer class="footer mt-auto">
+                <div class="copyright bg-white">
+                    <p>
+                        &copy; @DateTime.Now.Year Ramo.com
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="plugins/toaster/toastr.min.js"></script>
+    <script src="js/mono.js"></script>
+    <script src="js/custom.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\fonts\DanaFaNum-DemiBold.woff2" />
+    <None Include="wwwroot\fonts\DanaFaNum-Light.woff2" />
+    <None Include="wwwroot\fonts\DanaFaNum-Medium.woff2" />
+    <None Include="wwwroot\fonts\DanaFaNum-Regular.woff2" />
+    <None Include="wwwroot\fonts\IRANSansWeb.woff2" />
+    <None Include="wwwroot\js\site.js" />
+  </ItemGroup>
+
+</Project>
