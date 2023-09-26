@@ -4,16 +4,23 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace RAMO.UI.Pages
 {
+    [IgnoreAntiforgeryToken]
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        public string Message { get; private set; } = "................. ";
 
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
         }
 
-        public IActionResult OnGetNames()
+        public void OnGet()
+        {
+            Message+=" ok SALAM";
+        }
+
+        public JsonResult OnGetNames()
         {
             return new JsonResult("ok");
         }
