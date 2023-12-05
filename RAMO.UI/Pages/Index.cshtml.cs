@@ -20,14 +20,19 @@ namespace RAMO.UI.Pages
             Message+=" ok SALAM";
         }
 
-        public JsonResult OnGetNames()
+        public JsonResult OnGetNames(string name)
         {
-            return new JsonResult("ok");
+            return new JsonResult("ok + : " + name);
         }
 
-        public JsonResult OnPostGetTime([FromBody] string name) {
+        public JsonResult OnPostGetTime([FromBody] Test name) {
 
-            return new JsonResult(name + " " + DateTime.Now.Date);
+            return new JsonResult(name.name + " _ " + DateTime.Now.Date);
         }
+    }
+
+    public class Test
+    {
+        public string name { get; set; }
     }
 }

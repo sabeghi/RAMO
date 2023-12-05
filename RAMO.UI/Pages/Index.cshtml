@@ -7,23 +7,28 @@
 <div class="text-center">
     @Model.Message
     <img src="~/images/Dashboard.png" alt="Dashboard" style="max-width:100%;" />
-    <button type="button" class="btn btn-info" onclick="myclick()">click me!</button>
+    <button type="button" class="btn btn-info" onclick="myclick2()">click me!</button>
     <button type="button" class="btn btn-info" onclick="myclickPost()">click post!</button>
 </div>
 @section Scripts{
+    <script src="~/js/pages/customer.js"></script>
     <script type="text/javascript">
         function myclick() {
             $.ajax({
                 type: "GET",
-                url: "@Url.PageLink("/Index", "Names")",
+                url: "../api/Customer",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
+                //data: "name=salam",
                 beforeSend: function (xhr) {
                     xhr.setRequestHeader("XSRF-TOKEN",
                         $('input:hidden[name="__RequestVerificationToken"]').val());
                 },
                 success: function (data) {
-                    toastr.success(data, "ok")
+                    //toastr.success(data[0].firstName, "ok")
+                    data.map((itm)=>{
+                        toastr.success(itm.firstName, "ok")
+                    });
                 },
                 error: function (error) {
                     toastr.error("Error :)", "oops!")
@@ -37,11 +42,11 @@
                 contentType: "application/json; charset=utf-8",
                 url: "Index?handler=GetTime",
                 dataType: "json",
+                data: JSON.stringify({ "name": "mostafa" }),
                 beforeSend: function (xhr) {
                     xhr.setRequestHeader("XSRF-TOKEN",
                         $('input:hidden[name="__RequestVerificationToken"]').val());
                 },
-                data: { "name": "mostafa" },
                 success: function (data) {
                     toastr.success(data, "ok")
                 },

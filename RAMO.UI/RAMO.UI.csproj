@@ -12,11 +12,28 @@
     <None Include="wwwroot\fonts\DanaFaNum-Medium.woff2" />
     <None Include="wwwroot\fonts\DanaFaNum-Regular.woff2" />
     <None Include="wwwroot\fonts\IRANSansWeb.woff2" />
+    <None Include="wwwroot\js\pages\Customer.js" />
     <None Include="wwwroot\js\site.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Dapper" Version="2.1.24" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RAMO.Application\RAMO.Application.csproj" />
+    <ProjectReference Include="..\RAMO.Core\RAMO.Core.csproj" />
+    <ProjectReference Include="..\RAMO.Infrastructure\RAMO.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

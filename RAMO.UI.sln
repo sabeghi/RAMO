@@ -3,12 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAMO.UI", "RAMO.UI\RAMO.UI.csproj", "{4970F448-0061-4489-9EEF-C250580419C3}"
-	ProjectSection(ProjectDependencies) = postProject
-		{4A9FD686-2D6A-4B2D-9593-B01A5BAD507B} = {4A9FD686-2D6A-4B2D-9593-B01A5BAD507B}
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RAMO.UI", "RAMO.UI\RAMO.UI.csproj", "{4970F448-0061-4489-9EEF-C250580419C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAMO.Logic", "RAMO.Logic\RAMO.Logic.csproj", "{4A9FD686-2D6A-4B2D-9593-B01A5BAD507B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAMO.Application", "RAMO.Application\RAMO.Application.csproj", "{9CCFF583-DE0D-428B-9AA2-6E17DAA44888}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAMO.Core", "RAMO.Core\RAMO.Core.csproj", "{C41CBBA7-D0A8-47F5-A97B-A521541350F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAMO.Infrastructure", "RAMO.Infrastructure\RAMO.Infrastructure.csproj", "{D3217072-9762-4E4B-8E7B-C7A10953D1B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +21,18 @@ Global
 		{4970F448-0061-4489-9EEF-C250580419C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4970F448-0061-4489-9EEF-C250580419C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4970F448-0061-4489-9EEF-C250580419C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4A9FD686-2D6A-4B2D-9593-B01A5BAD507B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A9FD686-2D6A-4B2D-9593-B01A5BAD507B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A9FD686-2D6A-4B2D-9593-B01A5BAD507B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A9FD686-2D6A-4B2D-9593-B01A5BAD507B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CCFF583-DE0D-428B-9AA2-6E17DAA44888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CCFF583-DE0D-428B-9AA2-6E17DAA44888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CCFF583-DE0D-428B-9AA2-6E17DAA44888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CCFF583-DE0D-428B-9AA2-6E17DAA44888}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C41CBBA7-D0A8-47F5-A97B-A521541350F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C41CBBA7-D0A8-47F5-A97B-A521541350F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C41CBBA7-D0A8-47F5-A97B-A521541350F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C41CBBA7-D0A8-47F5-A97B-A521541350F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3217072-9762-4E4B-8E7B-C7A10953D1B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3217072-9762-4E4B-8E7B-C7A10953D1B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3217072-9762-4E4B-8E7B-C7A10953D1B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3217072-9762-4E4B-8E7B-C7A10953D1B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
